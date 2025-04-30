@@ -1,6 +1,4 @@
-/* style.css */
-
-/* 全体を中央揃えで読みやすく */
+/* General styling for the body to ensure readability */
 body {
   font-family: "Comic Sans MS", "Segoe UI", sans-serif;
   background-color: #fffafc;
@@ -10,33 +8,65 @@ body {
   line-height: 1.6;
 }
 
-/* 中央に配置するコンテナ */
+/* Header styling */
+header {
+  background-color: #f8e1e9;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Footer styling */
+footer {
+  background-color: #f8e1e9;
+  padding: 10px 20px;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+/* Navigation buttons */
+.nav-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #d64f85;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.nav-button:hover {
+  background-color: #a5446f;
+}
+
+/* Container aligned to the left */
 .container {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto; 
   padding: 20px;
 }
 
-/* 見出しデザイン */
+/* Heading styles */
 h1 {
   color: #d64f85;
   font-size: 2em;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left; /* Changed to left-align */
 }
 
 h2 {
   color: #a5446f;
   margin-top: 30px;
   font-size: 1.4em;
+  text-align: left; /* Changed to left-align */
 }
 
 h3 {
   color: #80525e;
   margin-top: 25px;
+  text-align: left; /* Changed to left-align */
 }
 
-/* メディア要素 */
+/* Media elements (video and images) */
 video,
 img {
   display: block;
@@ -47,12 +77,24 @@ img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* セクションごとの余白 */
+/* Section spacing */
 section {
   margin-bottom: 30px;
 }
 
-/* 質問リスト */
+/* Ensure script section (details) is left-aligned */
+details {
+  text-align: left;
+}
+
+/* Ensure paragraphs inside details are left-aligned */
+details p {
+  text-align: left;
+  margin: 5px 0; 
+  line-height: 2; /* Increased for wider line spacing */
+}
+
+/* Ordered list for questions */
 ol {
   padding-left: 20px;
   margin-bottom: 20px;
@@ -62,14 +104,35 @@ ol li {
   margin-bottom: 10px;
 }
 
-/* 回答欄 */
+/* Answer field styling */
 p {
   font-weight: bold;
   color: #555;
   margin-top: 20px;
+  text-align: left; /* Explicitly left-align */
 }
 
-/* スマホ対応 */
+/* Video wrapper for responsive YouTube embeds */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 20px 0; /* Changed to align left */
+}
+
+/* Ensure the iframe takes full space within the wrapper */
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive design for smaller screens */
 @media (max-width: 600px) {
   .container {
     padding: 10px;
@@ -90,21 +153,4 @@ p {
   ol {
     padding-left: 15px;
   }
-  
-  .video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  }
-
-  .video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  }
-
 }
